@@ -1,18 +1,18 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+
+  const seenNumbers = {};
+  
+  for (const number of array) {
+    
+    const complement = target - number;
+   
+    if (seenNumbers[complement]) return true;
+   
+    seenNumbers[number] = true;
+  }
+  
+  return false;
 }
-
-/* 
-  Write the Big O time complexity of your function here
-*/
-
-/* 
-  Add your pseudocode here
-*/
-
-/*
-  Add written explanation of your solution here
-*/
 
 // You can run `node index.js` to view these console logs
 if (require.main === module) {
